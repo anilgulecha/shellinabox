@@ -45,7 +45,7 @@
 }
 
 #vt100 #console, #vt100 #alt_console, #vt100 #cursor, #vt100 #lineheight, #vt100 .hidden pre { 
-  font-family:          "DejaVu Sans Mono", "Everson Mono", FreeMono, "Andale Mono", monospace;
+  font-family:          "DejaVu Sans Mono", "Everson Mono", FreeMono, "Andale Mono", "Lucida Console", monospace;
 }
 
 #vt100 #lineheight { 
@@ -61,8 +61,8 @@
   z-index:              1;
 }
 
-#vt100 #cursor.bright {
-  background-color:     black;
+#vt100 #cursor.bright { 
+  background-color:     #33BFF7;
   color:                white;
 }
 
@@ -71,7 +71,7 @@
 }
 
 #vt100 #cursor.inactive {
-  border:               1px solid;
+  border:               1px solid #e60000;
   margin:               -1px;
 }
 
@@ -217,31 +217,31 @@
  * color.css style sheets cannot work, if we define colors in styles.css.
  */
 [else DEFINES_COLORS]
-#vt100 .ansi0               {                            }
-#vt100 .ansi1               { color:            #cd0000; }
-#vt100 .ansi2               { color:            #00cd00; }
-#vt100 .ansi3               { color:            #cdcd00; }
-#vt100 .ansi4               { color:            #0000ee; }
-#vt100 .ansi5               { color:            #cd00cd; }
-#vt100 .ansi6               { color:            #00cdcd; }
-#vt100 .ansi7               { color:            #e5e5e5; }
-#vt100 .ansi8               { color:            #7f7f7f; }
-#vt100 .ansi9               { color:            #ff0000; }
-#vt100 .ansi10              { color:            #00ff00; }
-#vt100 .ansi11              { color:            #e8e800; }
-#vt100 .ansi12              { color:            #5c5cff; }
-#vt100 .ansi13              { color:            #ff00ff; }
-#vt100 .ansi14              { color:            #00ffff; }
-#vt100 .ansi15              { color:            #ffffff; }
+#vt100 .ansi0               { color:            #2b2b2b; }
+#vt100 .ansi1               { color:            #705050; }
+#vt100 .ansi2               { color:            #60b48a; }
+#vt100 .ansi3               { color:            #dfaf8f; }
+#vt100 .ansi4               { color:            #506070; }
+#vt100 .ansi5               { color:            #dc8cc3; }
+#vt100 .ansi6               { color:            #8cd0d3; }
+#vt100 .ansi7               { color:            #c1edff; }
+#vt100 .ansi8               { color:            #414141; }
+#vt100 .ansi9               { color:            #d70000; }
+#vt100 .ansi10              { color:            #afd7af; }
+#vt100 .ansi11              { color:            #d7af00; }
+#vt100 .ansi12              { color:            #00afff; }
+#vt100 .ansi13              { color:            #afafd7; }
+#vt100 .ansi14              { color:            #00d7d7; }
+#vt100 .ansi15              { color:            #cecece; }
 
-#vt100 .bgAnsi0             { background-color: #000000; }
-#vt100 .bgAnsi1             { background-color: #cd0000; }
-#vt100 .bgAnsi2             { background-color: #00cd00; }
-#vt100 .bgAnsi3             { background-color: #cdcd00; }
-#vt100 .bgAnsi4             { background-color: #0000ee; }
-#vt100 .bgAnsi5             { background-color: #cd00cd; }
-#vt100 .bgAnsi6             { background-color: #00cdcd; }
-#vt100 .bgAnsi7             { background-color: #e5e5e5; }
+#vt100 .bgAnsi0             { background-color: #2b2b2b; }
+#vt100 .bgAnsi1             { background-color: #705050; }
+#vt100 .bgAnsi2             { background-color: #60b48a; }
+#vt100 .bgAnsi3             { background-color: #dfaf8f; }
+#vt100 .bgAnsi4             { background-color: #506070; }
+#vt100 .bgAnsi5             { background-color: #dc8cc3; }
+#vt100 .bgAnsi6             { background-color: #8cd0d3; }
+#vt100 .bgAnsi7             { background-color: #c1edff; }
 #vt100 .bgAnsi8             { background-color: #7f7f7f; }
 #vt100 .bgAnsi9             { background-color: #ff0000; }
 #vt100 .bgAnsi10            { background-color: #00ff00; }
@@ -270,3 +270,4 @@
     width:              1000000ex;
   }
 }
+
