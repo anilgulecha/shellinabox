@@ -355,7 +355,7 @@ VT100.prototype.initializeUserCSSStyles = function() {
         var label                        = userCSSList[i][0];
         var newGroup                     = userCSSList[i][1];
         var enabled                      = userCSSList[i][2];
-      
+
         // Add user style sheet to document
         var style                        = document.createElement('link');
         var id                           = document.createAttribute('id');
@@ -373,7 +373,7 @@ VT100.prototype.initializeUserCSSStyles = function() {
         document.getElementsByTagName('head')[0].appendChild(style);
         style.disabled                   = !enabled;
       }
-    
+
       // Add entry to menu
       if (newGroup || i == userCSSList.length) {
         if (beginOfGroup != 0 && (i - beginOfGroup > 1 || !wasSingleSel)) {
@@ -580,7 +580,7 @@ VT100.prototype.addKeyBinding = function(elem, ch, key, CH, KEY) {
   this.addListener(elem, 'mousedown',
     function(vt100, elem, key) { return function(e) {
       if ((e.which || e.button) == 1) {
-        if (vt100.lastSelectedKey) {       
+        if (vt100.lastSelectedKey) {
           vt100.lastSelectedKey.className= '';
         }
         // Highlight the key while the mouse button is held down.
@@ -981,7 +981,7 @@ VT100.prototype.initializeElements = function(container) {
         vt100.indicateSize     = true;
       };
     }(this), 100);
-    this.addListener(window, 'resize', 
+    this.addListener(window, 'resize',
                      function(vt100) {
                        return function() {
                          vt100.hideContextMenu();
@@ -989,7 +989,7 @@ VT100.prototype.initializeElements = function(container) {
                          vt100.showCurrentSize();
                         }
                       }(this));
-    
+
     // Hide extra scrollbars attached to window
     document.body.style.margin = '0px';
     try { document.body.style.overflow ='hidden'; } catch (e) { }
@@ -1064,7 +1064,7 @@ VT100.prototype.initializeElements = function(container) {
       // Add a listener for the drop event
       this.addListener(this.scrollable, 'drop', dropEvent(this));
   }
-  
+
   // Initialize the blank terminal window.
   this.currentScreen           = 0;
   this.cursorX                 = 0;
@@ -1679,7 +1679,7 @@ VT100.prototype.putString = function(x, y, text, color, style) {
       this.insertBlankLine(yIdx);
     }
     line                            = console.childNodes[yIdx];
-    
+
     // If necessary, promote blank '\n' line to a <div> tag
     if (line.tagName != 'DIV') {
       var div                       = document.createElement('div');
@@ -1723,7 +1723,7 @@ VT100.prototype.putString = function(x, y, text, color, style) {
           s                        += ' ';
         } while (xPos + s.length < x);
       }
-    
+
       // If styles do not match, create a new <span>
       var del                       = text.length - s.length + x - xPos;
       if (oldColor != color ||
@@ -1782,7 +1782,7 @@ VT100.prototype.putString = function(x, y, text, color, style) {
       }
       this.setTextContent(span, s);
 
-      
+
       // Delete all subsequent <span>'s that have just been overwritten
       sibling                       = span.nextSibling;
       while (del > 0 && sibling) {
@@ -1797,7 +1797,7 @@ VT100.prototype.putString = function(x, y, text, color, style) {
           break;
         }
       }
-      
+
       // Merge <span> with next sibling, if styles are identical
       if (sibling && span.className == sibling.className &&
           span.style.cssText == sibling.style.cssText) {
@@ -1878,7 +1878,7 @@ VT100.prototype.putString = function(x, y, text, color, style) {
                           this.getTextContent(span));
       line.removeChild(sibling);
     }
-    
+
     // Prune white space from the end of the current line
     span                            = line.lastChild;
     while (span &&
@@ -1959,7 +1959,7 @@ VT100.prototype.enableAlternateScreen = function(state) {
     this.resizer();
     return;
   }
-  
+
   // We save the full state of the normal screen, when we switch away from it.
   // But for the alternate screen, no saving is necessary. We always reset
   // it when we switch to it.
@@ -2205,7 +2205,7 @@ VT100.prototype.scrollRegion = function(x, y, w, h, incX, incY,
           while (console.childNodes.length < this.terminalHeight) {
             this.insertBlankLine(this.terminalHeight);
           }
-          
+
           // Add new lines at bottom in order to force scrolling
           for (var i = 0; i < y; i++) {
             this.insertBlankLine(console.childNodes.length, color, style);
@@ -2564,7 +2564,7 @@ VT100.prototype.showContextMenu = function(x, y) {
   this.menu.style.height      =  this.container.offsetHeight + 'px';
   popup.style.left            = '0px';
   popup.style.top             = '0px';
-  
+
   var margin                  = 2;
   if (x + popup.clientWidth >= this.container.offsetWidth - margin) {
     x              = this.container.offsetWidth-popup.clientWidth - margin - 1;
@@ -2652,7 +2652,7 @@ VT100.prototype.handleKey = function(event) {
   ch                                  = this.applyModifiers(ch, event);
 
   // By this point, "ch" is either defined and contains the character code, or
-  // it is undefined and "key" defines the code of a function key 
+  // it is undefined and "key" defines the code of a function key
   if (ch != undefined) {
     this.scrollable.scrollTop         = this.numScrollbackLines *
                                         this.cursorHeight + 1;
@@ -2876,7 +2876,7 @@ VT100.prototype.fixEvent = function(event) {
     case  61: /* = -> + */ u = 61; s =  43; break;
     case  91: /* [ -> { */ u = 91; s = 123; break;
     case  92: /* \ -> | */ u = 92; s = 124; break;
-    case  93: /* ] -> } */ u = 93; s = 125; break; 
+    case  93: /* ] -> } */ u = 93; s = 125; break;
     case  96: /* ` -> ~ */ u = 96; s = 126; break;
 
     case 109: /* - -> _ */ u = 45; s =  95; break;
@@ -2891,7 +2891,7 @@ VT100.prototype.fixEvent = function(event) {
     case 192: /* ` -> ~ */ u = 96; s = 126; break;
     case 219: /* [ -> { */ u = 91; s = 123; break;
     case 220: /* \ -> | */ u = 92; s = 124; break;
-    case 221: /* ] -> } */ u = 93; s = 125; break; 
+    case 221: /* ] -> } */ u = 93; s = 125; break;
     case 222: /* ' -> " */ u = 39; s =  34; break;
     default:                                break;
     }
@@ -3604,7 +3604,7 @@ VT100.prototype.sendControlToPrinter = function(ch) {
           break;
         }
         // Fall through
-      case 3 /* ESgetpars */: 
+      case 3 /* ESgetpars */:
         if (ch == 0x3B /*;*/) {
           this.npar++;
           break;
@@ -3966,7 +3966,7 @@ VT100.prototype.doControl = function(ch) {
       }
       // Fall through
     case 5 /* ESdeviceattr */:
-    case 3 /* ESgetpars */: 
+    case 3 /* ESgetpars */:
 /*;*/ if (ch == 0x3B) {
         this.npar++;
         break;
@@ -4241,7 +4241,7 @@ VT100.prototype.vt100 = function(s) {
        this.utfEnabled && ch >= 128 ||
        !(this.dispCtrl ? this.ctrlAlways : this.ctrlAction)[ch & 0x1F]) &&
       (ch != 0x7F || this.dispCtrl);
-    
+
     if (isNormalCharacter && this.isEsc == 0 /* ESnormal */) {
       if (ch < 256) {
         ch                = this.translate[this.toggleMeta ? (ch | 0x80) : ch];
