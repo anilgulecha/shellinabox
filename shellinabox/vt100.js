@@ -2685,6 +2685,8 @@ VT100.prototype.handleKey = function(event) {
     }
     if (ch == undefined) {
       switch (key) {
+      case 163: /* # for FF15   */ ch = this.applyModifiers(35, event); break;
+      case 173: /* - for FF15   */ ch = this.applyModifiers(45, event); break;
       case   8: /* Backspace    */ ch = '\u007f';                       break;
       case   9: /* Tab          */ ch = '\u0009';                       break;
       case  10: /* Return       */ ch = '\u000A';                       break;
@@ -2859,6 +2861,8 @@ VT100.prototype.fixEvent = function(event) {
     var u                   = undefined;
     var s                   = undefined;
     switch (this.lastNormalKeyDownEvent.keyCode) {
+    case  163: /* # -> ~ FF15 */ u = 96; s =  126; break;
+    case  173: /* - -> _ FF15 */ u = 45; s =  95; break;
     case  39: /* ' -> " */ u = 39; s =  34; break;
     case  44: /* , -> < */ u = 44; s =  60; break;
     case  45: /* - -> _ */ u = 45; s =  95; break;
