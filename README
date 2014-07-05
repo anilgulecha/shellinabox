@@ -1,0 +1,7 @@
+This is my fork of the ubnuntu repo shellinabox, with some fixes.
+
+Original Readme
+---
+Build the package according to the information in INSTALL, then refer to
+to the shellinaboxd.1 manual page, or the shellinaboxd.ps PostScript file
+for detailed documentation.

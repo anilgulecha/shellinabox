@@ -1,0 +1,20 @@
+Source: shellinabox
+Section: web
+Priority: optional
+Maintainer: Marc Singer <elf@debian.org>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, binutils,
+ libssl-dev, libpam0g-dev, zlib1g-dev
+Standards-Version: 3.9.3
+Homepage: http://shellinabox.com
+Vcs-Git: https://code.google.com/p/shellinabox/
+Vcs-Browser: https://code.google.com/p/shellinabox/source/browse/
+
+Package: shellinabox
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, lsb-base
+Suggests: openssl
+Description: publish command line shell through AJAX interface
+ Shellinabox can export arbitrary command line programs to any JavaScript
+ enabled web browser. By default, it prompts for username and password
+ and then exports a SSL/TLS encrypted login shell. Shellinabox provides
+ a VT100 compatible terminal emulator that runs within any modern browser.
