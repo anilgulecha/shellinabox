@@ -99,7 +99,8 @@
 #vt100 #menu .popup {
   background-color:     #EEEEEE;
   border:               1px solid black;
-  font-family:          sans-serif;
+  font-family:          monospace;
+  padding:              5px;
   position:             absolute;
 }
 
@@ -117,6 +118,7 @@
 #vt100 #menu .popup li.hover {
   background-color:     #444444;
   color:                white;
+  cursor:               pointer;
 }
 
 #vt100 #menu .popup li.disabled {
@@ -125,6 +127,8 @@
 
 #vt100 #menu .popup hr { 
   margin:               0.5ex 0px 0.5ex 0px;
+  border:               0;
+  border-top:           #aaa 1px solid;
 }
 
 #vt100 #menu img { 
@@ -154,10 +158,8 @@
   padding:              .8em;
   float:                left;
   position:             absolute;
-  border-radius:        10px;
-  -moz-border-radius:   10px;
-  box-shadow:           4px 4px 6px #222222;
-  -webkit-box-shadow:   4px 4px 6px #222222;
+  box-shadow:           1px 1px 2px #222222;
+  -webkit-box-shadow:   1px 1px 2px #222222;
   /* Don't set the -moz-box-shadow. It doesn't properly scale when CSS
    * transforms are in effect. Once Firefox supports box-shadow, it should
    * automatically do the right thing. Until then, leave shadows disabled
@@ -180,8 +182,8 @@
   -moz-border-radius:   5px;
   background-color:     #555555;
   color:                #eeeeee;
-  box-shadow:           2px 2px 3px #222222;
-  -webkit-box-shadow:   2px 2px 3px #222222;
+  box-shadow:           1px 1px 3px #222222;
+  -webkit-box-shadow:   1px 1px 3px #222222;
   padding:              4px;
   margin:               2px;
   height:               2ex;

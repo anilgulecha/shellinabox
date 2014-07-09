@@ -2466,7 +2466,7 @@ VT100.prototype.showContextMenu = function(x, y) {
            this.usercss.innerHTML +
            '<hr id="endusercss" />' :
            '<hr />') +
-          '<li id="about">About...</li>' +
+          '<li id="about" class="disabled">HackerRankX Tasks</li>' +
         '</ul>' +
       '</td></tr>' +
     '</table>';
