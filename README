@@ -1,10 +1,17 @@
 This is my fork of the ubuntu repo shellinabox, with some fixes.
 
+  * Firefox/Chrome crach fixed.
+  * Auto login enabled -- enable auto-login:
+    - To set the username, set as follows: ```window.autologinuser = "ubuntu"```
+    - To set password (optional), set as follows: ```window.autologinpassword = "abc123"```
+    - Default pause between these is 2 seconds. To change set (eg 5 seconds): 
+        ```window.autologinpasswordpause = 5000```
+
+
 To build the debian binary run (after cding into the repository):
 ```
 sudo apt-get install build-essential debhelper autotools-dev binutils libssl-dev libpam0g-dev zlib1g-dev
 ./configure
-make
 dpkg-buildpackage
 ```
 Original Readme

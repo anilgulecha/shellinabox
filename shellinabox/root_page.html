@@ -98,6 +98,31 @@
                          '}' +
                          '</style>');
         }
+
+        window.loginInterval = setInterval(function() {
+          function enterWord(s){
+            var chars = s.split("");
+            i = 0;
+            while (i < chars.length) {
+              window.shell.keyPressed({keyCode:chars[i].charCodeAt(0)});
+              i++;
+            }
+            window.shell.keyPressed({keyCode:10});
+          }
+          var chars, i;
+          if (window.autologinuser && window.shell) {
+            enterWord(window.autologinuser)
+            window.autologinuser = "";
+            clearInterval(window.loginInterval);
+            if (window.autologinpassword){
+              setTimeout(function(){
+                  enterWord(window.autologinpassword);
+                  window.autologinpassword="";
+              },window.autologinpasswordpause || 2000);
+            }
+          }
+        }, 2000);
+
       })();
     --></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -107,7 +132,7 @@
        correctly deal with the enclosing frameset (if any), if we do not
        do this
    -->
-  <body onload="setTimeout('new ShellInABox()', 100)"
+  <body onload="setTimeout('window.shell = new ShellInABox()', 100)"
         scroll="no"><noscript>JavaScript
     must be enabled for ShellInABox</noscript></body>
 </html>
