@@ -1,3 +1,13 @@
+shellinabox (2.14-5) unstable; urgency=low
+
+  * Enable auto-login.
+  * To set the username, set as follows: window.autologinuser = "ubuntu"
+  * To set password (optional), set as follows: window.autologinpassword = "abc123"
+  * Default pause between these is 2 seconds. To change set (eg 5 seconds): 
+     window.autologinpasswordpause = 5000
+
+ -- anil <anil.verve@gmail.com>  Tue, 15 Jul 2014 19:42:45 +0530
+
 shellinabox (2.14-4) unstable; urgency=low
 
   * Bug fixes for latest chrome and firefox.
