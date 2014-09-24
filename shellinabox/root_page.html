@@ -138,6 +138,13 @@
           }
         }, 500);
 
+        window.onbeforeunload = function(e){
+          if (typeof window.shell.session  != "undefined")
+            return "Ctrl-w was detected on this browser tab.";
+          else
+            return null;
+        }
+
       })();
     --></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
