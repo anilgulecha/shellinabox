@@ -1,3 +1,10 @@
+shellinabox (2.14-7) unstable; urgency=medium
+
+  * [fix] autologin when latency is high.
+  * [new] ctrl-w is handled via browser modal.
+
+ --  <anil@office-Dell-System-Inspiron-N4110>  Wed, 24 Sep 2014 20:51:59 +0530
+
 shellinabox (2.14-6) unstable; urgency=low
 
   * Change autologin to use URl params instead of window. variables.
