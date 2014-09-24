@@ -121,17 +121,22 @@
             window.shell.keyPressed({keyCode:10});
           }
           var chars, i;
-          if (getQueryVariable("u") && window.shell) {
-            enterWord(getQueryVariable("u"))
+          if (typeof ShellInABox == "function") {
             clearInterval(window.loginInterval);
-            if (getQueryVariable("p")){
+            window.shell = new ShellInABox();
+            if (getQueryVariable("u")){
               setTimeout(function(){
-                  enterWord(getQueryVariable("p"));
-                  window.autologinpassword="";
-              },getQueryVariable("d") || 2000);
+                enterWord(getQueryVariable("u"))
+                if (getQueryVariable("p")){
+                  setTimeout(function(){
+                      enterWord(getQueryVariable("p"));
+                      window.autologinpassword="";
+                  },getQueryVariable("d") || 2000);
+                }
+              }, 2000);
             }
           }
-        }, 2000);
+        }, 500);
 
       })();
     --></script>
@@ -142,7 +147,6 @@
        correctly deal with the enclosing frameset (if any), if we do not
        do this
    -->
-  <body onload="setTimeout('window.shell = new ShellInABox()', 1000)"
-        scroll="no"><noscript>JavaScript
+  <body scroll="no"><noscript>JavaScript
     must be enabled for ShellInABox</noscript></body>
 </html>
