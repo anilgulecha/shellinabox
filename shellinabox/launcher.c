@@ -1657,11 +1657,11 @@ static void launcherDaemon(int fd) {
       continue;
     }
 
-    // Check if we received terminate request from parent process and 
+    // Check if we received terminate request from parent process and
     // try to terminate child, if child is still running
     if (request.terminate > 0) {
       errno = 0;
-      NOINTR(pid = waitpid(request.terminate, &status, WNOHANG)); 
+      NOINTR(pid = waitpid(request.terminate, &status, WNOHANG));
       if (pid == 0 && errno == 0) {
         if (kill(request.terminate, SIGTERM) == 0) {
           debug("Terminating child %d (kill)", request.terminate);
